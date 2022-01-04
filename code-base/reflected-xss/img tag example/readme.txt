@@ -13,7 +13,11 @@ we can write our  custom function into the onerror attribute.
  or wer can write more complicated script. In this example we mimic the accessToken. Access Tokens are used to grant Authentication to web services. 
  Generally they are stored at local storage of the browser. We can reach that by this simple script. Of course since it is reflected xss attack, we can reach only
  the access token of the logged in user.
-" onerror="(function(){console.log( {...localStorage });})()"
+" onerror="(
+  function hey(){
+    console.log( {...localStorage });
+    }
+  )()"
 
  function printLocalStorage() {
   alert({ ...localStorage });

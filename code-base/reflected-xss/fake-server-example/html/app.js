@@ -39,7 +39,7 @@ function formSubmitHandler(event) {
   // renderMessages();
 }
 async function makeRequest(userMessages) {
-  postData("http://localhost:8000/", userMessages).then((data) => {
+  postData("http://localhost:3000/", userMessages).then((data) => {
     renderMessages(data);
     console.log(data); // JSON data parsed by `data.json()` call
   });

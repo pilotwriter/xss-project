@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xss-attack</title>
+  </head>
+  <body>
+    <p>
+      Let's create dynamic functions! Type functions functionality in the box.
+    </p>
+    <textarea name="funct" id="function" cols="30" rows="10"></textarea>
+    <button>click</button>
+
+    <script>
+      document
+        .getElementsByTagName("button")[0]
+        .addEventListener("click", function () {
+          var funcText = document.getElementById("function").value;
+          console.log(funcText);
+          var func = Function(funcText);
+          func();
+        });
+    </script>
+  </body>
+</html>

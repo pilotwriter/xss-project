@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom xss</title>
+  </head>
+  <body>
+    <h1><center>Calculator!</center></h1>
+
+    <p>Operation:</p>
+    <input id="operation" type="text" />
+
+    <p>Answer:</p>
+    <section id="printSection"></section>
+
+    <button id="buttonAnswer" type="submit">Get Answer</button>
+  </body>
+
+  <script>
+    function getAnswer() {
+      let operation = document.getElementById("operation").value;
+      let ans = eval(operation);
+      let ansSelector = document.getElementById("printSection");
+      ansSelector.innerHTML = `<p>${ans}</p>`;
+    }
+
+    document
+      .getElementById("buttonAnswer")
+      .addEventListener("click", getAnswer);
+  </script>
+</html>

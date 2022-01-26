@@ -2,7 +2,7 @@ This is the example server to show the stored xss attack.
 
 We don't filter the input that is coming from front end and keeping it in our database.
 Since we are keeping the data in the database and retrieving it from database, 
-it effects all users that are reaching this data. As and example we are showing 
+it affects all users that are reaching this data. As an example we are showing 
 only an alert box, but custom scripts can be written to do more specific and dangerous actions. \
 
 

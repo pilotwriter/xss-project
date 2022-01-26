@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <title>Dom xss 2</title>
+  </head>
+  <body>
+    Select your language:
+
+    <select>
+      <script>
+        document.write(
+          "<OPTION value=1>" +
+            encodeURIComponent(
+              document.location.href.substring(
+                document.location.href.indexOf("default=") + 8
+              )
+            ) +
+            "</OPTION>"
+        );
+
+        document.write("<OPTION value=2>English</OPTION>");
+      </script>
+    </select>
+  </body>
+</html>

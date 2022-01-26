@@ -5,12 +5,18 @@ const models = require("./models/index");
 var cors = require("cors");
 app.use(cors());
 app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
 app.get("/inputs", async (req, res) => {
-  const inputs = await models.example.findAll();
-  res.send(inputs);
+  try {
+    const inputs = await models.example.findAll();
+    res.send(inputs);
+  } catch (err) {
+    console.log("ERRROOOOR: " + err);
+  }
 });
 
 app.post("/inputs", async (req, res) => {

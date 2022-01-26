@@ -10,7 +10,9 @@ async function fetchData(url) {
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
+
   const jsonResponse = await response.json();
+
   for (let data of jsonResponse) {
     userMessages.push({
       text: data.input,

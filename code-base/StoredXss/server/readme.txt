@@ -24,6 +24,9 @@ We used sequelize ORM tool to manage the  database transactions and migrations. 
 you need to migrate the migrations files. For migrations open a terminal at project root and write
 sequelize db:migrate
 
+If it does not work, you should install sequelize-cli globally with this command.
+npm i -g sequelize-cli
+
 Run the server:
 Open  terminal at the root of the project and write
 
@@ -36,7 +39,8 @@ it also from the frontend code!
 Attack :
 In order to show the attack, all setup must be done. After that we can open the frontend
 and for the image url input place just paste, " onerror="alert('hacked')" and hit enter.
-When you refresh the page, it is going to show you the an alert box
+When you refresh the page, it is going to show you the an alert box.
+We can write any js code that we want to run. By this way, we can get the critical information of the users. 
 
 
 

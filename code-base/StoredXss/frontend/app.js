@@ -48,7 +48,7 @@ function renderMessages() {
       <li class="message-item">
         <div class="message-image">
         <!-- by giving malicious code piece, we can run out js script  -->
-        <img src="${message.image}"  alt="${message.text}">
+        <img src="${message.image}"  >
         </div>
         <p>${message.text}</p>
       </li>

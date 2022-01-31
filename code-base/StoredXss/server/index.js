@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3001;
+const PORT = 3001;
 const models = require("./models/index");
 var cors = require("cors");
 app.use(cors());
@@ -15,7 +15,7 @@ app.get("/inputs", async (req, res) => {
     const inputs = await models.example.findAll();
     res.send(inputs);
   } catch (err) {
-    console.log("ERRROOOOR: " + err);
+    console.log("Error: " + err);
   }
 });
 
@@ -30,7 +30,6 @@ app.post("/inputs", async (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(port, async () => {
-  // await models.sequelize.sync({ force: true });
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, async () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });

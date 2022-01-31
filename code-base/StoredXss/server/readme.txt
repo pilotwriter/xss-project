@@ -37,8 +37,12 @@ it also from the frontend code!
 
 
 Attack :
-In order to show the attack, all setup must be done. After that we can open the frontend
-and for the image url input place just paste, " onerror="alert('hacked')" and hit enter.
+In order to show the attack, all setup must be done. In server/index.js file, we need to make the variable
+IS_PROTECTED  = false in order to run the attack. When we want to do filtering and prevent our system
+from an attack, we need to set IS_PROTECTED variable to true.
+
+After that we can open the frontend
+and for the image url input place just paste, " onerror="alert('hacked')" and hit enter and refresh the page.
 When you refresh the page, it is going to show you the an alert box.
 We can write any js code that we want to run. By this way, we can get the critical information of the users. 
 
